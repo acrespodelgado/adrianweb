@@ -1,43 +1,77 @@
 @import 'variables.scss';
 
-.typewriter-left, .typewriter-right {
+/* Aseguramos que el h1 esté centrado */
+h1.typewriter-left {
+    text-align: center; /* Asegura que el h1 se mantenga centrado */
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: monospace;
+    border-right: 2px solid #fff;
+    animation: typing-h1 1.25s steps(11, end), blink 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+}
+
+h1.typewriter-left.ended {
+    border-right: none;
+    animation: none;
+}
+
+/* Animación para H2 izquierdo */
+.typewriter-left {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
     font-family: monospace;
     border-right: 2px solid #fff;
-    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+    animation: typing-h2-left 2s steps(30, end), blink 0.75s step-end infinite;
     animation-fill-mode: forwards;
 }
 
-.typewriter-right {
-    direction: rtl;
-    text-align: right;
-}
-
-.typewriter-left.ended,
-.typewriter-right.ended {
+.typewriter-left.ended {
     border-right: none;
     animation: none;
 }
 
-/* Centrar el h1 */
-h1.typewriter-left {
-    text-align: center;
-    display: block;
-    margin: 0 auto;
+/* Animación para H2 derecho */
+.typewriter-right {
+    direction: rtl;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-family: monospace;
+    border-left: 2px solid #fff;
+    animation: typing-h2-right 2s steps(28, end), blink 0.75s step-end infinite;
+    animation-fill-mode: forwards;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+.typewriter-right.ended {
+    border-left: none;
+    animation: none;
+}
+
+/* Keyframes */
+@keyframes typing-h1 {
+    from { width: 0ch }
+    to { width: 11ch }
+}
+
+@keyframes typing-h2-left {
+    from { width: 0ch }
+    to { width: 30ch } /* Ajuste este valor si el texto en el H2 es más largo */
+}
+
+@keyframes typing-h2-right {
+    from { width: 0ch }
+    to { width: 29ch } /* Ajuste este valor si el texto en el H2 es más largo */
 }
 
 @keyframes blink {
     50% { border-color: transparent; }
 }
 
-/* Apariciones */
 .fade-in {
     animation: fadeIn 1s ease-in forwards;
     opacity: 0;

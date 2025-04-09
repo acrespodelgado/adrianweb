@@ -42,7 +42,7 @@ export default function AboutMe() {
         timers.push(setTimeout(() => setEnded(prev => ({ ...prev, h2right: true })), 9900));
 
         timers.push(setTimeout(() => setStage(4), 10200)); // ul
-        timers.push(setTimeout(() => setStage(5), 11200)); // tecnologías
+        timers.push(setTimeout(() => setStage(5), 10200)); // tecnologías
 
         return () => timers.forEach(clearTimeout);
     }, []);
