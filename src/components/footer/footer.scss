@@ -1,0 +1,72 @@
+@import '../../sass/variables.scss';
+
+footer {
+    text-transform: uppercase;
+    padding: 2rem 1.5rem;
+
+    p {
+        margin: 0;
+    }
+
+    .footer-contact {
+        margin: 3rem 0;
+    
+        h3 {
+            font-weight: 400;
+            text-transform: none;
+            text-align: left;
+            margin: 1rem 0;
+            width: fit-content;
+        }
+    
+        a {
+            transition: all 0.3s ease-in;
+            font-size: 1.45rem;
+            color: $secondary;
+            text-decoration: none;
+            width: fit-content;
+    
+            p {
+                text-transform: none;
+            }
+    
+            &:hover {
+                transition: all 0.3s ease-in-out;
+                opacity: 0.7;
+            }
+    
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.2);
+                    opacity: 0.7;
+                }
+            }
+    
+            .arrow-bounce {
+                animation: pulse 1s infinite;
+                transition: transform 0.3s ease-in;
+            }
+        }
+    }
+
+    .footer-nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+
+        .nav-link {
+            color: $secondary;
+            padding: 0 1rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transition: all 0.3s ease-in-out;
+                opacity: 0.7;
+            }
+        }
+    }
+}

@@ -1,5 +1,63 @@
-@import '../../variables.scss';
+@import '../../sass/variables.scss';
+
+.logo {
+    max-width: 60px;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+
+    &:hover {
+        transform: scale(1.15);
+        opacity: 0.7;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+}
+
 
 .navbar {
-    background: $black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $primary;
+    padding: 1rem 1.5rem;
+
+    .navbar-collapse {
+        justify-content: end;
+
+        .navbar-nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+    
+            .nav-item {
+                .nav-link {
+                    position: relative;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: $secondary;
+                    font-weight: 500;
+                    padding-bottom: 4px;
+                    transition: opacity 0.3s ease;
+    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: $secondary;
+                        transition: width 0.3s ease;
+                    }
+    
+                    &:hover {
+                        opacity: 0.8;
+    
+                        &::after {
+                            width: 100%;
+                            transition: width 0.4s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

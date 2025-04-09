@@ -1,10 +1,14 @@
-@import 'variables.scss';
+@import 'sass/variables.scss';
 
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: $black;
-  color: $white;
+  background: $primary;
+  color: $secondary;
+}
+
+.onPage {
+  height: 100vh;
+  padding-top: 10rem;
 }

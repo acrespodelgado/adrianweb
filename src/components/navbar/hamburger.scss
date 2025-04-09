@@ -1,0 +1,8 @@
+@import '../../sass/variables.scss';
+@import '../../sass/hamburgers/hamburgers.scss';
+
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+    background-color: $secondary;
+}
