@@ -3,22 +3,26 @@ import './aboutme.scss';
 import '../../sass/animations.scss';
 
 export default function AboutMe() {
-    const technologies = [
+    const certifications = [
         {
-            name: 'PHP',
-            description: 'Proyectos con Laravel, Wordpress, Symfony, CodeIgniter y nativo.'
+            name: 'Graduado en Ingeniería Informática (UCA - 2025)',
+            description: 'TIC - Matrícula de honor en TFGM'
         },
         {
-            name: 'Java',
-            description: 'Aplicación en Android, proyectos didácticos con Spring.'
+            name: 'Graduado en CFGS DAM  (Cádiz) - 2016',
+            description: 'FP Dual Befresh SL, Salesianos.'
         },
         {
-            name: 'Python',
-            description: 'Scripts para uso personal, proyectos didácticos con Django.'
+            name: 'Nivel C1 Inglés',
+            description: 'Certificado por APTIS ESOL.'
         },
         {
-            name: 'JavaScript',
-            description: 'Proyecto TFGM en Vue.js, Jquery, proyecto web en Angular y NodeJS, web personal en ReactJS.'
+            name: 'Certificaciones CISCO',
+            description: ['CCNP, CCNAV2 (UCA) y CCNAV1 (Salesianos)', 'Linux Essentials (Salesianos)'] 
+        },
+        {
+            name: 'Piloto drones A1/A3',
+            description: 'Certificado por AESA.'
         }
     ];
 
@@ -42,7 +46,7 @@ export default function AboutMe() {
         timers.push(setTimeout(() => setEnded(prev => ({ ...prev, h2right: true })), 9900));
 
         timers.push(setTimeout(() => setStage(4), 10200)); // ul
-        timers.push(setTimeout(() => setStage(5), 10200)); // tecnologías
+        timers.push(setTimeout(() => setStage(5), 10200)); // certificados
 
         return () => timers.forEach(clearTimeout);
     }, []);
@@ -61,17 +65,16 @@ export default function AboutMe() {
 
                     <div className="col-12 col-lg-6">
                         {stage >= 2 && (
-                            <h2 className={`typewriter-left ${ended.h2left ? 'ended' : ''}`}>
+                            <h2 className={`typewriter-left aboutme-title ${ended.h2left ? 'ended' : ''}`}>
                                 Me llamo Adrián Crespo Delgado
                             </h2>
                         )}
                         {stage >= 4 && (
                             <ul className="fade-in">
-                                <li>Soy Graduado en el Grado de Ingeniería Informática (UCA - 2025).</li>
-                                <li>También soy graduado en el Ciclo Formativo de Grado Superior de DAM, en Salesianos (Cádiz - 2017).</li>
-                                <li>Estudié Ingeniería de Software (Sevilla - 2013), pero decidí cambiar mi enfoque y estudiar Ing. Informática general.</li>
+                                <li>Soy Graduado en el Grado de Ingeniería Informática.</li>
+                                <li>También soy graduado en el Ciclo Formativo de Grado Superior de DAM.</li>
+                                <li>Estudié Ingeniería de Software, pero decidí cambiar mi enfoque y estudiar Ing. Informática general.</li>
                                 <li>Me encanta aprender nuevas tecnologías, por lo que no tengo problema en adaptarme en cualquier proyecto.</li>
-                                <li>Hablo español de forma nativa e inglés (C1).</li>
                                 <li>Tengo experiencia en trabajo en solitario principalmente, aunque he trabajado durante más de 2 años en proyectos grupales.</li>
                                 <li>Realizo impresión 3D y diseño de piezas, soy un apasionado de la informática y me encanta la tecnología en general.</li>
                             </ul>
@@ -80,16 +83,28 @@ export default function AboutMe() {
 
                     <div className="col-12 col-lg-6 text-right">
                         {stage >= 3 && (
-                            <h2 className={`typewriter-right ${ended.h2right ? 'ended' : ''}`}>
-                                Mi experiencia en tecnologías
-                            </h2>
+                            <h2 className={`typewriter-right cert-title ${ended.h2right ? 'ended' : ''}`}>
+                                <a href="https://drive.google.com/drive/folders/1ShWTRKOzpVQ1xDgKVfwj2NC8fzbuzMOr?usp=drive_link" target="_blank">
+                                    Certificaciones
+                                </a>
+                            </h2>        
                         )}
-                        {stage >= 5 && technologies.map((tech, index) => (
-                            <div className="tech-section fade-in-right" key={index} style={{ animationDelay: `${index * 300}ms` }}>
-                                <h3>{tech.name}</h3>
-                                <p>{tech.description}</p>
-                            </div>
-                        ))}
+                        {stage >= 5 && (
+                            <ul className="fade-in cert-list">
+                                {certifications.map((cert, index) => (
+                                    <li className="fade-in-right" key={index} style={{ animationDelay: `${index * 100}ms` }}>
+                                        <span>{cert.name}</span>
+                                        {Array.isArray(cert.description) ? (
+                                            cert.description.map((line, i) => (
+                                                <span className="sub-description" key={i}>{line}</span>
+                                            ))
+                                        ) : (
+                                            <span className="sub-description">{cert.description}</span>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 </div>
             </div>

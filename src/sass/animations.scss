@@ -25,7 +25,6 @@ h1.typewriter-left.ended {
     display: inline-block;
     font-family: monospace;
     border-right: 2px solid #fff;
-    animation: typing-h2-left 2s steps(30, end), blink 0.75s step-end infinite;
     animation-fill-mode: forwards;
 }
 
@@ -43,8 +42,15 @@ h1.typewriter-left.ended {
     display: inline-block;
     font-family: monospace;
     border-left: 2px solid #fff;
-    animation: typing-h2-right 2s steps(28, end), blink 0.75s step-end infinite;
     animation-fill-mode: forwards;
+}
+
+.typewriter-left.aboutme-title {
+    animation: typing-h2-left-aboutme-title 2s steps(30, end), blink 0.75s step-end infinite;
+}
+
+.typewriter-right.cert-title {
+    animation: typing-h2-right-cert-title 2s steps(28, end), blink 0.75s step-end infinite;
 }
 
 .typewriter-right.ended {
@@ -58,14 +64,14 @@ h1.typewriter-left.ended {
     to { width: 11ch }
 }
 
-@keyframes typing-h2-left {
+@keyframes typing-h2-left-aboutme-title {
     from { width: 0ch }
     to { width: 30ch } /* Ajuste este valor si el texto en el H2 es más largo */
 }
 
-@keyframes typing-h2-right {
+@keyframes typing-h2-right-cert-title {
     from { width: 0ch }
-    to { width: 29ch } /* Ajuste este valor si el texto en el H2 es más largo */
+    to { width: 15ch } /* Ajuste este valor si el texto en el H2 es más largo */
 }
 
 @keyframes blink {

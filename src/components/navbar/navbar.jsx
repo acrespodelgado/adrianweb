@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png'
 import Hamburger from './hamburger';
 
 export default function Navbar() {
-    const navItems = ['Sobre mí', 'Titulaciones', 'Proyectos', 'Contacto'];
+    const navItems = ['Sobre mí', 'Experiencia', 'Proyectos', 'Contacto'];
 
     return (
         <nav className="navbar navbar-expand-lg fixed-top">
